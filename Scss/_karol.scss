@@ -1,0 +1,203 @@
+@import "./reset";
+@import "./variables";
+
+.body-karol {
+    min-height: 100vh;
+    background-image: url("./pictures/watati.jpg");
+    background-size: auto;
+    background-attachment: fixed;
+
+}
+
+
+// header
+.header-page--karol {
+    @extend .header-page;
+
+}
+
+
+// main
+.main-karol {
+    min-height: 80vh;
+
+}
+
+.img2 {
+    margin: 0 5px;
+    padding: 20px;
+    height: 50vh;
+    width: 25vh;
+    background-image: url("./pictures/karol-fondo1.jpg");
+    background-size: cover;
+}
+
+.img1 {
+    margin: 0 5px;
+    padding: 20px;
+    height: 50vh;
+    width: 25vh;
+    background-image: url("./pictures/karol_fondo2.jpg");
+    background-size: cover;
+}
+
+
+.karol-date {
+
+    @include content-flex (row, space-between, center);
+    background-color: #e8cfe9bd;
+
+
+
+
+    .first {
+        color: #5F459D;
+    }
+
+    .second {
+        color: #9B495B;
+    }
+
+    .third {
+        padding: 0 10px 0 0;
+        color: #29696B;
+    }
+
+    .karol-date__info-title {
+        color: #29696B;
+        text-shadow: -0.2rem 0 bisque;
+        padding: 0 20px
+    }
+
+    .karol-date__info {
+        @include content-flex(column, space-between, center);
+        min-width: 50vh;
+
+    }
+
+    .karol-date__list {
+        padding: 10px;
+        @include content-flex(row, space-between, center);
+        font-size: 1.5rem;
+
+    }
+}
+
+
+.img-grilla {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px;
+
+
+    grid-template-areas: "grid-1 grid-2 "
+        "grid-3 grid-4"
+        "grid-5 grid-6";
+
+    @for $numero from 1 through 6 {
+        .grid-#{$numero} {
+            grid-area: grid-#{$numero};
+
+            align-self: center;
+            justify-self: center;
+            padding: 20px 0;
+            width: 50vh;
+            height: 40vh;
+
+        }
+    }
+}
+
+.center-karol {
+    @include flex-center;
+}
+
+.paragraph-container {
+    background-color: rgba(240, 248, 255, 0.219);
+    width: 80vh;
+    margin: 50px;
+    padding: 15px;
+    text-shadow: -2px 0 #1f6447;
+    color: rgb(206, 220, 231);
+    font-size: 1.5rem;
+    text-align: center;
+
+}
+
+// footer
+.footer-karol {
+    @include footer (#4f84af);
+
+    &__element {
+        @include footer__element (#EDEFED);
+
+    }
+
+    &__element--link:active {
+        color: #EDEFED;
+    }
+
+    &__element--link:hover {
+
+        font-size: 1.1rem;
+        color: rgba(233, 163, 72, 0.886);
+    }
+}
+
+
+// media-query
+@media (max-width: 1000px) {
+
+    .main-karol {
+        min-height: 100%;
+    }
+
+    .karol-date {
+        @include content-flex (row, space-between, center);
+        height: 60vh;
+        background-color: #e8cfe9bd;
+
+        .img1 {
+            height: 0;
+            width: 0;
+            visibility: hidden;
+        }
+
+        .img2 {
+            height: 0;
+            width: 0;
+            visibility: hidden;
+        }
+
+
+    }
+
+    .img-grilla {
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        gap: 20px;
+
+
+        grid-template-areas: "grid-1" "grid-2"
+            "grid-3" "grid-4"
+            "grid-5" "grid-6";
+
+        @for $numero from 1 through 6 {
+            .grid-#{$numero} {
+                grid-area: grid-#{$numero};
+
+                align-self: center;
+                justify-self: center;
+                margin: 20px 0;
+                width: 30vh;
+                height: 20vh;
+
+            }
+        }
+    }
+
+}

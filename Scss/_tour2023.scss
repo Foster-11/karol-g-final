@@ -1,0 +1,107 @@
+@import "./reset";
+@import "./variables";
+
+// background
+
+.body-tour {
+    min-height: 100%;
+    background-image: url("./pictures/fondo_tour_desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+// header
+
+.nav-tour {
+    @extend .header-page;
+    background-color: #ff5ec12f;
+
+    .header-item {
+        color: aliceblue;
+    }
+
+    .active {
+        background-color: #ff5ec15e;
+    }
+}
+
+.header-tour {
+    background-color: none;
+    min-height: 10vh;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    .tour-title1 {
+        color: whitesmoke;
+        text-shadow: -0.1em 0em #8D5EFF;
+    }
+
+    .tour-title2 {
+        text-shadow: -0.1em 0.1em #B3EBED;
+    }
+}
+
+
+
+
+
+// tour main
+
+.main-tour {
+    height: 80vh;
+    overflow: auto;
+
+    &__info {
+        text-align: center;
+        @include flex-center;
+        background-color: #edefed96;
+        border-radius: 50px;
+        font-size: 1.5rem;
+        padding: 20px;
+        margin: 20px 5px;
+    }
+
+    .static-container__tour {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        overflow: auto;
+
+    }
+
+    .date-tour {
+        background-color: #5448705a;
+        border: solid rgba(245, 222, 179, 0.538);
+        color: whitesmoke;
+        margin: 16px 0;
+        text-align: center;
+
+    }
+}
+
+.footer-tour {
+
+    @include footer (#bd926a69);
+
+
+    &__element {
+        @include footer__element (#EDEFED);
+    }
+
+    &__element--link:active {
+
+        color: #EDEFED;
+    }
+
+    &__element--link:hover {
+        font-size: 1.1rem;
+        color: rgba(233, 163, 72, 0.886);
+    }
+
+}

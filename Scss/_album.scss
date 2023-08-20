@@ -1,0 +1,70 @@
+@import "./reset";
+@import "./variables";
+
+
+.back-album {
+    height: 100vh;
+    background-image: url("./pictures/logo_album.jpg");
+    background-size: auto;
+    background-attachment: fixed;
+}
+
+.header-album {
+    @extend .header-tour;
+    background-color: rgba(255, 145, 0, 0.438);
+
+    .album-tittle {
+        color: rgb(213, 212, 219);
+        text-shadow: -3px 0 rgb(0, 0, 0);
+    }
+}
+
+// main album
+
+.album-main {
+    overflow: auto;
+    @include content-flex (column, space-around, center);
+
+    &__info {
+        text-align: center;
+        @include flex-center;
+        background-color: #edefed96;
+        border-radius: 50px;
+        font-size: 1.5rem;
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    &__item {
+        margin: 10px 0;
+        width: 60%;
+        padding: 20px 0;
+        background-color: rgba(255, 255, 255, 0.534);
+        border: solid rgba(0, 0, 0, 0.459);
+        text-align: center;
+    }
+
+}
+
+
+// footer album
+
+.footer-album {
+    @include footer (#1c797c9c);
+
+    &__element {
+        @include footer__element (#EDEFED);
+    }
+
+    &__element--link:active {
+
+        color: #EDEFED;
+    }
+
+    &__element--link:hover {
+        font-size: 1.1rem;
+        color: rgba(233, 163, 72, 0.886);
+    }
+
+
+}
